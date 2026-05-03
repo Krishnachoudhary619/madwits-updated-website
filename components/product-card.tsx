@@ -27,7 +27,15 @@ export function ProductCard({ product, onQuickLook }: ProductCardProps) {
         borderRadius: "24px",
         boxShadow: "rgba(0, 0, 0, 0.1) 0px 10px 50px",
       }}
-      layout
+      role="button"
+      tabIndex={0}
+      onClick={() => onQuickLook(product)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault()
+          onQuickLook(product)
+        }
+      }}
     >
       {/* Badge */}
       {product.badge && (
@@ -62,29 +70,31 @@ export function ProductCard({ product, onQuickLook }: ProductCardProps) {
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              loading="lazy"
             />
           </motion.div>
         </div>
       </div>
 
-      {/* Product Info */}
+      {/* Product Info — single gradient on mobile; layered blur only md+ */}
       <div className="absolute bottom-0 left-0 right-0 p-6">
+        <div className="absolute inset-0 md:hidden bg-gradient-to-t from-black/90 via-black/55 to-transparent" />
         <div
-          className="absolute inset-0 backdrop-blur-sm"
+          className="absolute inset-0 hidden md:block backdrop-blur-sm"
           style={{
             maskImage: "linear-gradient(to top, black 0%, black 60%, transparent 100%)",
             WebkitMaskImage: "linear-gradient(to top, black 0%, black 60%, transparent 100%)",
           }}
         />
         <div
-          className="absolute inset-0 backdrop-blur-md"
+          className="absolute inset-0 hidden md:block backdrop-blur-md"
           style={{
             maskImage: "linear-gradient(to top, black 0%, black 40%, transparent 80%)",
             WebkitMaskImage: "linear-gradient(to top, black 0%, black 40%, transparent 80%)",
           }}
         />
         <div
-          className="absolute inset-0 backdrop-blur-lg"
+          className="absolute inset-0 hidden md:block backdrop-blur-lg"
           style={{
             maskImage: "linear-gradient(to top, black 0%, black 20%, transparent 60%)",
             WebkitMaskImage: "linear-gradient(to top, black 0%, black 20%, transparent 60%)",

@@ -76,7 +76,9 @@ export function MaterialsSection() {
               alt={`${service.name} services`}
               fill
               className="object-cover"
-              priority
+              sizes="100vw"
+              priority={service.id === "corporate-gifting"}
+              loading={service.id === "corporate-gifting" ? undefined : "lazy"}
             />
           </motion.div>
         ))}

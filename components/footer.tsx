@@ -1,7 +1,7 @@
 "use client"
-import Image from "next/image"
 import { motion } from "framer-motion"
-import { Instagram, Mail, ArrowUpRight } from "lucide-react"
+import { ArrowUpRight, Instagram, Mail } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -62,7 +62,7 @@ export function Footer() {
                 />
               </div>
               <p className="text-neutral-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
-                Mumbai &amp; Navi Mumbai&apos;s trusted printing partner. Expert flex, digital &amp; offset printing services. 
+                Mumbai &amp; Navi Mumbai&apos;s trusted printing partner. Expert flex, digital &amp; offset printing services.
                 Quality printing, competitive prices, and fast delivery.
               </p>
               <div className="flex space-x-3 sm:space-x-4">
