@@ -1,6 +1,7 @@
 "use client"
+import Image from "next/image"
 import { motion } from "framer-motion"
-import { Instagram, Twitter, Facebook, ArrowUpRight } from "lucide-react"
+import { Instagram, Mail, ArrowUpRight } from "lucide-react"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -31,12 +32,15 @@ export function Footer() {
 
   const socialLinks = [
     { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/madwits_kharghar/" },
-    { name: "Twitter", icon: Twitter, href: "#" },
-    { name: "Facebook", icon: Facebook, href: "#" },
+    {
+      name: "Email madwitsdigital@gmail.com",
+      icon: Mail,
+      href: "mailto:madwitsdigital@gmail.com",
+    },
   ]
 
   return (
-    <footer className="bg-white/[0.02] border-t border-white/[0.02]">
+    <footer className="mt-12 sm:mt-16 lg:mt-24 bg-white/[0.02] border-t border-white/[0.02]">
       <div className="container-custom py-10 sm:py-16 lg:py-20 px-4 sm:px-6">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 mb-8 sm:mb-12">
@@ -48,7 +52,15 @@ export function Footer() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-3 sm:mb-4">MADWITS</h3>
+              <div className="relative h-14 w-[180px] sm:h-16 sm:w-[200px] mb-3 sm:mb-4">
+                <Image
+                  src="/madwits-logo.png"
+                  alt="Madwits"
+                  fill
+                  className="object-contain object-left"
+                  sizes="200px"
+                />
+              </div>
               <p className="text-neutral-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                 Mumbai &amp; Navi Mumbai&apos;s trusted printing partner. Expert flex, digital &amp; offset printing services. 
                 Quality printing, competitive prices, and fast delivery.

@@ -1,9 +1,10 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
+import { motion } from "framer-motion"
 import { Phone } from "lucide-react"
+import Image from "next/image"
+import { useEffect, useState } from "react"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -29,32 +30,36 @@ export function Header() {
       transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between h-12 lg:h-16 relative">
+        <div className="flex items-center justify-between h-18 sm:h-[5.5rem] lg:h-24 relative py-1 sm:py-1.5">
           {/* Logo */}
           <motion.div className="flex-shrink-0" whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
             <a
               href="#"
-              className={cn(
-                "text-xl lg:text-2xl font-bold tracking-tight transition-colors",
-                isScrolled ? "text-neutral-900 hover:text-neutral-700" : "text-white hover:text-white/80",
-              )}
+              className="block relative h-14 w-[200px] sm:h-[4.25rem] sm:w-[240px] lg:h-16 lg:w-[248px]"
               aria-label="Madwits - Best Printing Services in Mumbai"
             >
-              MADWITS
+              <Image
+                src="/madwits-logo.png"
+                alt=""
+                fill
+                className="object-contain object-left"
+                sizes="(max-width: 640px) 200px, (max-width: 1024px) 240px, 248px"
+                priority
+              />
             </a>
           </motion.div>
-          
+
           {/* Phone Number */}
           <a
             href="https://wa.me/919820809898"
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
-              "flex items-center gap-2 text-sm font-medium transition-colors",
+              "flex items-center gap-2 text-sm sm:text-base font-medium transition-colors shrink-0",
               isScrolled ? "text-neutral-700 hover:text-neutral-900" : "text-white/90 hover:text-white",
             )}
           >
-            <Phone className="w-4 h-4" />
+            <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
             <span className="hidden sm:inline">+91 98208 09898</span>
           </a>
         </div>

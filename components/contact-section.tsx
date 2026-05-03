@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { MessageCircle, MapPin, Phone, Clock } from "lucide-react"
+import { Clock, MapPin, MessageCircle, Phone } from "lucide-react"
 import { Reveal } from "./reveal"
 
 export function ContactSection() {
@@ -110,7 +110,7 @@ export function ContactSection() {
         {/* Floating WhatsApp Button Info */}
         <Reveal delay={0.3}>
           <p className="text-center text-white/80 mt-8 sm:mt-12 text-xs sm:text-sm">
-            Prefer email? Write to us at <span className="font-medium text-white">info@madwits.com</span>
+            Prefer email? Write to us at <span className="font-medium text-white">madwitsdigital@gmail.com</span>
           </p>
         </Reveal>
       </div>
