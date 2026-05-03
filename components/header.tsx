@@ -34,7 +34,7 @@ export function Header() {
           {/* Logo */}
           <motion.div className="flex-shrink-0" whileHover={{ scale: 1.02 }} transition={{ duration: 0.2 }}>
             <a
-              href="#"
+              href="/"
               className="block relative h-14 w-[200px] sm:h-[4.25rem] sm:w-[240px] lg:h-16 lg:w-[248px]"
               aria-label="Madwits - Best Printing Services in Mumbai"
             >

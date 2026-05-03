@@ -2,31 +2,32 @@
 import { motion } from "framer-motion"
 import { ArrowUpRight, Instagram, Mail } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
   const footerLinks = {
     "Printing Services": [
-      { name: "Flex Printing", href: "#" },
-      { name: "Digital Printing", href: "#" },
-      { name: "Offset Printing", href: "#" },
-      { name: "Banners & Standees", href: "#" },
-      { name: "Business Cards", href: "#" },
+      { name: "Flex Printing", href: "/#services-grid" },
+      { name: "Digital Printing", href: "/#services-grid" },
+      { name: "Offset Printing", href: "/#services-grid" },
+      { name: "Banners & Standees", href: "/#printing-categories" },
+      { name: "Business Cards", href: "/#featured-products" },
     ],
     Products: [
-      { name: "Corporate Gifts", href: "#" },
-      { name: "Trophies & Awards", href: "#" },
-      { name: "Custom Packaging", href: "#" },
-      { name: "Brochures & Flyers", href: "#" },
-      { name: "Design Services", href: "#" },
+      { name: "Corporate Gifts", href: "/#services" },
+      { name: "Trophies & Awards", href: "/#printing-categories" },
+      { name: "Custom Packaging", href: "/#featured-products" },
+      { name: "Brochures & Flyers", href: "/#featured-products" },
+      { name: "Design Services", href: "/#printing-categories" },
     ],
     Support: [
-      { name: "Contact Us", href: "#" },
-      { name: "Request Quote", href: "#" },
-      { name: "Bulk Orders", href: "#" },
-      { name: "Delivery Info", href: "#" },
-      { name: "FAQs", href: "#" },
+      { name: "Contact Us", href: "/#contact" },
+      { name: "Request Quote", href: "/#contact" },
+      { name: "Bulk Orders", href: "/#contact" },
+      { name: "Delivery Info", href: "/#why-choose-us" },
+      { name: "FAQs", href: "/#contact" },
     ],
   }
 
@@ -42,9 +43,7 @@ export function Footer() {
   return (
     <footer className="mt-12 sm:mt-16 lg:mt-24 bg-white/[0.02] border-t border-white/[0.02]">
       <div className="container-custom py-10 sm:py-16 lg:py-20 px-4 sm:px-6">
-        {/* Main Footer Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-16 mb-8 sm:mb-12">
-          {/* Brand Section */}
           <div className="lg:col-span-4">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -52,7 +51,7 @@ export function Footer() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="relative h-14 w-[180px] sm:h-16 sm:w-[200px] mb-3 sm:mb-4">
+              <Link href="/" className="block relative h-14 w-[180px] sm:h-16 sm:w-[200px] mb-3 sm:mb-4">
                 <Image
                   src="/madwits-logo.png"
                   alt="Madwits"
@@ -60,7 +59,7 @@ export function Footer() {
                   className="object-contain object-left"
                   sizes="200px"
                 />
-              </div>
+              </Link>
               <p className="text-neutral-600 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
                 Mumbai &amp; Navi Mumbai&apos;s trusted printing partner. Expert flex, digital &amp; offset printing services.
                 Quality printing, competitive prices, and fast delivery.
@@ -82,7 +81,6 @@ export function Footer() {
             </motion.div>
           </div>
 
-          {/* Links Sections */}
           <div className="lg:col-span-8">
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
               {Object.entries(footerLinks).map(([category, links], index) => (
@@ -97,7 +95,7 @@ export function Footer() {
                   <ul className="space-y-2 sm:space-y-3">
                     {links.map((link) => (
                       <li key={link.name}>
-                        <a
+                        <Link
                           href={link.href}
                           className="text-neutral-600 hover:text-neutral-900 transition-colors duration-200 group flex items-center text-sm"
                         >
@@ -106,7 +104,7 @@ export function Footer() {
                             size={12}
                             className="ml-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hidden sm:inline"
                           />
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -116,7 +114,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Section */}
         <motion.div
           className="pt-6 sm:pt-8 pb-4 border-t border-neutral-200 flex justify-center items-center"
           initial={{ opacity: 0 }}
@@ -127,15 +124,15 @@ export function Footer() {
           <div className="flex flex-col items-center space-y-3 text-xs sm:text-sm text-neutral-500 text-center">
             <p>&copy; {currentYear} Madwits. Best Printing Services in Mumbai &amp; Navi Mumbai. All rights reserved.</p>
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-              <a href="#" className="hover:text-neutral-700 transition-colors">
+              <Link href="/privacy-policy" className="hover:text-neutral-700 transition-colors">
                 Privacy Policy
-              </a>
-              <a href="#" className="hover:text-neutral-700 transition-colors">
+              </Link>
+              <Link href="/terms-of-service" className="hover:text-neutral-700 transition-colors">
                 Terms of Service
-              </a>
-              <a href="#" className="hover:text-neutral-700 transition-colors">
+              </Link>
+              <Link href="/cookies" className="hover:text-neutral-700 transition-colors">
                 Cookies
-              </a>
+              </Link>
             </div>
           </div>
         </motion.div>

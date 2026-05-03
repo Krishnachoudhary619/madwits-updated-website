@@ -156,7 +156,11 @@ export function CollectionStrip() {
   const duplicatedCollections = [...collections, ...collections]
 
   return (
-    <section ref={containerRef} className="py-12 sm:py-16 lg:py-32 overflow-hidden">
+    <section
+      ref={containerRef}
+      id="printing-categories"
+      className="py-12 sm:py-16 lg:py-32 overflow-hidden"
+    >
       <div className="mb-8 sm:mb-12">
         <Reveal>
           <div className="container-custom text-center px-4 sm:px-6">
