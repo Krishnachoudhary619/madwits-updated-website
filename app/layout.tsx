@@ -20,9 +20,12 @@ const ogImage = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Madwits | Best Printing Services in Mumbai & Navi Mumbai | Flex, Digital & Offset Printing",
+  title: {
+    default: "Madwits | Printing Services in Mumbai & Navi Mumbai",
+    template: "%s | Madwits",
+  },
   description:
-    "Leading printing experts in Mumbai & Navi Mumbai. Flex printing, digital printing, offset printing, banners, standees, visiting cards, brochures & corporate gifting. Quality printing at competitive prices. Call +91 98208 09898.",
+    "Leading printing experts in Mumbai & Navi Mumbai. Flex printing, digital printing, offset printing, banners, standees, visiting cards, brochures & corporate gifting. Quality printing at competitive prices. Call +91 9820809898.",
   keywords: [
     "printing services Mumbai",
     "flex printing Navi Mumbai",
@@ -64,6 +67,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   authors: [{ name: "Madwits", url: siteUrl }],
