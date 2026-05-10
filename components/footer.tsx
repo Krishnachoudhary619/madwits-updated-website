@@ -9,18 +9,18 @@ export function Footer() {
 
   const footerLinks = {
     "Printing Services": [
-      { name: "Flex Printing", href: "/#services-grid" },
-      { name: "Digital Printing", href: "/#services-grid" },
-      { name: "Offset Printing", href: "/#services-grid" },
-      { name: "Banners & Standees", href: "/#printing-categories" },
-      { name: "Business Cards", href: "/#featured-products" },
+      { name: "Flex Printing", href: "/flex-printing-mumbai" },
+      { name: "Digital Printing", href: "/digital-printing-navi-mumbai" },
+      { name: "Offset Printing", href: "/offset-printing-mumbai" },
+      { name: "Banners & Standees", href: "/banner-printing-kharghar" },
+      { name: "Business Cards", href: "/visiting-card-printing-navi-mumbai" },
     ],
     Products: [
-      { name: "Corporate Gifts", href: "/#services" },
+      { name: "Corporate Gifts", href: "/corporate-gifting-mumbai" },
+      { name: "Brochures & Flyers", href: "/brochure-printing-mumbai" },
+      { name: "Stickers & Labels", href: "/sticker-printing-mumbai" },
       { name: "Trophies & Awards", href: "/#printing-categories" },
       { name: "Custom Packaging", href: "/#featured-products" },
-      { name: "Brochures & Flyers", href: "/#featured-products" },
-      { name: "Design Services", href: "/#printing-categories" },
     ],
     Support: [
       { name: "Contact Us", href: "/#contact" },

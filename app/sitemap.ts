@@ -1,8 +1,17 @@
 import type { MetadataRoute } from "next"
+import { SERVICE_SLUGS } from "@/lib/service-landing-pages"
 import { siteUrl } from "@/lib/site"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date()
+
+  const servicePages: MetadataRoute.Sitemap = SERVICE_SLUGS.map((slug) => ({
+    url: `${siteUrl}/${slug}`,
+    lastModified,
+    changeFrequency: "weekly" as const,
+    priority: 0.85,
+  }))
+
   return [
     {
       url: siteUrl,
@@ -10,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+    ...servicePages,
     {
       url: `${siteUrl}/privacy-policy`,
       lastModified,
