@@ -1,5 +1,7 @@
 import { JsonLd } from "@/components/seo/json-ld"
 import { siteUrl } from "@/lib/site"
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import type React from "react"
@@ -96,6 +98,8 @@ export default function RootLayout({
       <body className="font-sans bg-neutral-50 text-neutral-900 overflow-x-hidden">
         <JsonLd />
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
